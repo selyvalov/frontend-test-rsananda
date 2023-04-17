@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import MasterIcd from './component/master-icd'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+export default class App extends Component {
+  state = {
+    title: "Master ICD",
+    masters: [
+      {
+        english_name: "icd_tens_name_english",
+        nama: "icd_tens_name_bahasa",
+        kode: "icd_tens_code",
+        type: "icd_tens_type"
+      },
+      {
+        english_name: "icd_tens_name_english2",
+        nama: "icd_tens_name_bahasa2",
+        kode: "icd_tens_code2",
+        type: "icd_tens_type2"
+      }
+    ]
+  }
+  
+  render() {
+    return (
+      <div>
+        <MasterIcd></MasterIcd>
+      </div>
+    )
+  }
 }
-
-export default App;
